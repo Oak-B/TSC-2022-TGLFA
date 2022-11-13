@@ -201,18 +201,13 @@ def main(LR, L2, batch_size, size, mom, drop_prob, name, update_manner, optimize
 
 if __name__ == '__main__':
     torch.cuda.set_device(3)
-    for idx in ["mean-mean-20221031_4444", "mean-mean-20221031_5555"]:
-        for name in ["rt10_aug20_t1v4", "rt15_aug20_t1v4", "rt20_aug20_t1v4"]:
+    for idx in ["20221031_4444"]:
+        for name in ["rt10_aug20_t1v4"]:
             for p in [0.2]:
                 for lr in [5e-3]:
                     for layer_dim in [128]:
                         for layer_num_fully in [3]:
                             for layer_num_graph in [10]:
                                 main(lr, 0.2, 512, [layer_dim, layer_dim], 0.0, 0.0, name, "normal", "Adam", "val", layer_num_fully, idx, p, layer_num_graph)
-                                #main(lr, 0.1, 512, [layer_dim], 0.0, 0.0, name, "normal", "Adam", "val", 1, idx, p, layer_num_graph)
-
-                                #main(lr, 0.1, 512, [layer_dim, layer_dim], 0.0, 0.0, name, "normal", "Adam", "val", 3, idx, p, layer_num_graph)
-                                #main(lr, 0.1, 512, [layer_dim, layer_dim, layer_dim], 0.0, 0.0, name, "normal", "Adam", "val", 4, idx, p, layer_num_graph)
-                                #main(lr, 0.1, 512, [layer_dim, layer_dim, layer_dim], 0.0, 0.0, name, "normal", "Adam", "val", 5, idx, p, layer_num_graph)
 
 
